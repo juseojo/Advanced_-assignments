@@ -21,20 +21,20 @@ func b(array: [String]) -> [String] {
 	}
 }
 
-func c<T: Sequence>(array: T) -> T {
+func c<T: Sequence>(array: T) -> [T.Element] {
 	var count = 1
 
 	return array.filter {_ in
 		count += 1
 		return count % 2 == 0
-	} as! T
+	}
 }
 
-func d<T: Sequence>(array: T) -> T where T.Element: Numeric {
+func d<T: Sequence>(array: T) -> [T.Element] where T.Element: Numeric {
 	var count = 1
 
 	return array.filter {_ in
 		count += 1
 		return count % 2 == 0
-	} as! T
+	}
 }
