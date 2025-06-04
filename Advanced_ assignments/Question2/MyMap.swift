@@ -22,7 +22,7 @@ func question2() {
 }
 
 // 2-3
-func myMap(_ array: [Int], trailingClosure: @escaping (Int) -> String) -> [String] {
+func myMap(_ array: [Int], trailingClosure: (Int) -> String) -> [String] {
 	var result = [String]()
 
 	for num in array {
