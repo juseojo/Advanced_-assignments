@@ -6,35 +6,41 @@
 //
 
 func a(array: [Int]) -> [Int] {
-	var count = 1
-	return array.filter {_ in
-		count += 1
-		return count % 2 == 0
-	}
+	return array.enumerated()
+		.filter { index, _ in
+			return index % 2 == 0
+		}
+		.map { _, element in // 튜플 -> 배열
+			return element
+		}
 }
 
 func b(array: [String]) -> [String] {
-	var count = 1
-	return array.filter {_ in
-		count += 1
-		return count % 2 == 0
-	}
+	return array.enumerated()
+		.filter { index, _ in
+			return index % 2 == 0
+		}
+		.map { _, element in // 튜플 -> 배열
+			return element
+		}
 }
 
 func c<T: Sequence>(array: T) -> [T.Element] {
-	var count = 1
-
-	return array.filter {_ in
-		count += 1
-		return count % 2 == 0
-	}
+	return array.enumerated()
+		.filter { index, _ in
+			return index % 2 == 0
+		}
+		.map { _, element in // 튜플 -> 배열
+			return element
+		}
 }
 
 func d<T: Sequence>(array: T) -> [T.Element] where T.Element: Numeric {
-	var count = 1
-
-	return array.filter {_ in
-		count += 1
-		return count % 2 == 0
-	}
+	return array.enumerated()
+		.filter { index, _ in
+			return index % 2 == 0
+		}
+		.map { _, element in // 튜플 -> 배열
+			return element
+		}
 }
