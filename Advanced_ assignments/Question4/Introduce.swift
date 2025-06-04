@@ -9,7 +9,6 @@ protocol Introducible {
 	var name: String { get set }
 
 	func introduce() -> String
-	func uniqueMethod() -> Void
 }
 
 struct Robot: Introducible {
@@ -18,10 +17,6 @@ struct Robot: Introducible {
 			print("변경 이전 값: \(oldValue)")
 			print("변경 이후 값: \(self.name)")
 		}
-	}
-
-	func uniqueMethod() {
-		batteryCharge()
 	}
 
 	func introduce() -> String {
@@ -45,9 +40,6 @@ struct Cat: Introducible {
 		return "안녕하세요, 저는 \(name)입니다."
 	}
 
-	func uniqueMethod() {
-		grooming()
-	}
 
 	func grooming() {
 		print("손을 핥습니다...")
@@ -63,9 +55,6 @@ struct Dog: Introducible {
 		return "안녕하세요, 저는 \(name)입니다."
 	}
 
-	func uniqueMethod() {
-		barking()
-	}
 
 	func barking() {
 		print("멍!멍!")
@@ -84,6 +73,14 @@ func question4() {
 	introducibles.append(dog)
 
 	for introducible in introducibles {
-		introducible.uniqueMethod()
+		if let r = introducible as? Robot {
+			r.batteryCharge()
+		}
+		else if let c = introducible as? Cat {
+			c.grooming()
+		}
+		else if let d = introducible as? Dog {
+			d.barking()
+		}
 	}
 }
