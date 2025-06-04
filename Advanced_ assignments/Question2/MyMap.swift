@@ -9,7 +9,7 @@
 let numbers = [1, 2, 3, 4, 5]
 var result = [String]()
 
-func Question2() {
+func question2() {
 	// 2-1
 	result = numbers.map { String($0) }
 
