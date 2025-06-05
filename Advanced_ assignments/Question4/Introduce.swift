@@ -20,9 +20,9 @@ struct Robot: Introducible {
 	}
 
 	func introduce() -> String {
-		print("안녕하세요, 저는 \(name)입니다.")
+		print("안녕하세요, 저는 로봇 \(name)입니다.")
 
-		return "안녕하세요, 저는 \(name)입니다."
+		return "안녕하세요, 저는 로봇 \(name)입니다."
 	}
 
 	func batteryCharge() {
@@ -33,13 +33,6 @@ struct Robot: Introducible {
 
 struct Cat: Introducible {
 	var name: String
-	
-	func introduce() -> String {
-		print("안녕하세요, 저는 \(name)입니다.")
-
-		return "안녕하세요, 저는 \(name)입니다."
-	}
-
 
 	func grooming() {
 		print("손을 핥습니다...")
@@ -48,13 +41,6 @@ struct Cat: Introducible {
 
 struct Dog: Introducible {
 	var name: String
-	
-	func introduce() -> String {
-		print("안녕하세요, 저는 \(name)입니다.")
-		
-		return "안녕하세요, 저는 \(name)입니다."
-	}
-
 
 	func barking() {
 		print("멍!멍!")
